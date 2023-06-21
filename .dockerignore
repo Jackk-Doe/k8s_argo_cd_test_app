@@ -1,0 +1,13 @@
+.git
+.gitignore
+*.md
+
+vendor/
+
+.env
+.env.example
+
+Dockerfile
+Dockerfile-tools
+
+MY_NOTE.txt
