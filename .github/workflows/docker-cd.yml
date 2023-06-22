@@ -33,7 +33,9 @@ jobs:
       uses: docker/build-push-action@v3
       with:
         push: true
-        tags: ${{ secrets.DOCKER_USERNAME }}/go-app:latest
+        tags: |
+          ${{ secrets.DOCKER_USERNAME }}/go-app:${{ github.sha }}
+          ${{ secrets.DOCKER_USERNAME }}/go-app:latest
         build-args: |
           COMMIT_SHA=${{ github.sha }}
           BRANCH=${{ github.ref }}
