@@ -4,15 +4,15 @@ name: Build and push Docker image to Docker Hub
 on:
   workflow_run:
     workflows: ["Go app build and run CI"]
-    branches: [ "main" ]
+    branches: [ "deploy" ]
     types:
       - completed
 
-#
 jobs:
   build-and-push-docker-image:
+    # Only run this job if the workflow_run job (go-ci) is successful
     if : github.event.workflow_run.conclusion == 'success'
-    
+
     name: Build and push Docker image
     runs-on: ubuntu-latest
     steps:
