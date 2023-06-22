@@ -11,6 +11,8 @@ on:
 #
 jobs:
   build-and-push-docker-image:
+    if : github.event.workflow_run.conclusion == 'success'
+    
     name: Build and push Docker image
     runs-on: ubuntu-latest
     steps:
