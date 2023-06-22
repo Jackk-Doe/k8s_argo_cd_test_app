@@ -10,6 +10,7 @@ on:
     types:
       - completed
 
+#
 jobs:
   build-and-push-docker-image:
     name: Build and push Docker image
