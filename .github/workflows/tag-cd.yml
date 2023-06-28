@@ -13,11 +13,20 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
+    - name: Test display metadata
+      run: |
+        echo "Github Event is ${{ toJson(github.event) }}"
+        echo "Github is ${{ toJson(github) }}"
+        echo "Github Ref is ${{ toJson(github.ref) }}"
+
+    - name: Test print label
+      run: echo "Label is ${{ steps.metadata.outputs.labels }}"
+
     - name: Test print tag
       run: echo "Tag is ${{ github.ref }}"
 
     - name: Test print tag 2
-      run: echo "Tag 2 is ${{ steps.meta.outputs.tags }}"
+      run: echo "Tag 2 is ${{ steps.metadata.outputs.tags }}"
 
     - name: Test print tag 3
       run: echo "Tag 3 is ${{ github.refs.tags }}"
