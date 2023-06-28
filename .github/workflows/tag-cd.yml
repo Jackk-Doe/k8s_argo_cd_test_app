@@ -13,29 +13,8 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Get Github Refname
-      run: echo "Github Refname is ${{ github.ref_name }}"
-
-    - name: Get Github Event
-      run: echo "Github Event is ${{ toJson(github.event) }}"
-
-    - name: Get Github toJson
-      run: echo "Github is ${{ toJson(github) }}"
-
-    - name: Get Github Reference
-      run: echo "Github Ref is ${{ toJson(github.ref) }}"
-
-    - name: Test print label
-      run: echo "Label is ${{ steps.metadata.outputs.labels }}"
-
     - name: Test print tag
-      run: echo "Tag is ${{ github.ref }}"
-
-    - name: Test print tag 2
-      run: echo "Tag 2 is ${{ steps.metadata.outputs.tags }}"
-
-    - name: Test print tag 3
-      run: echo "Tag 3 is ${{ github.refs.tags }}"
+      run: echo "Tag is ${{ github.ref_name }}"
 
     # - name: Set up Docker Buildx
     #   id: buildx
