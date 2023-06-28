@@ -20,7 +20,7 @@ jobs:
       run: echo "Tag 2 is ${{ steps.meta.outputs.tags }}"
 
     - name: Test print tag 3
-      run: echo "Tag 3 is ${{ github.ref.tags }}"
+      run: echo "Tag 3 is ${{ github.refs.tags }}"
 
     # - name: Set up Docker Buildx
     #   id: buildx
