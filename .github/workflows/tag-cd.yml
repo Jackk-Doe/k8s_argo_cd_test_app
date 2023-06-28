@@ -19,6 +19,9 @@ jobs:
     - name: Test print tag 2
       run: echo "Tag 2 is ${{ steps.meta.outputs.tags }}"
 
+    - name: Test print tag 3
+      run: echo "Tag 3 is ${{ github.ref.tags }}"
+
     # - name: Set up Docker Buildx
     #   id: buildx
     #   uses: docker/setup-buildx-action@v2
