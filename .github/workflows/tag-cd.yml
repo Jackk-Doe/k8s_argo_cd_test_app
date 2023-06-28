@@ -13,9 +13,11 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
+    - name: Get Github Refname
+      run: echo "Github Refname is ${{ github.ref_name }}"
+
     - name: Get Github Event
-      run: |
-        echo "Github Event is ${{ toJson(github.event) }}"
+      run: echo "Github Event is ${{ toJson(github.event) }}"
 
     - name: Get Github toJson
       run: echo "Github is ${{ toJson(github) }}"
