@@ -13,11 +13,15 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Test display metadata
+    - name: Get Github Event
       run: |
         echo "Github Event is ${{ toJson(github.event) }}"
-        echo "Github is ${{ toJson(github) }}"
-        echo "Github Ref is ${{ toJson(github.ref) }}"
+
+    - name: Get Github toJson
+      run: echo "Github is ${{ toJson(github) }}"
+
+    - name: Get Github Reference
+      run: echo "Github Ref is ${{ toJson(github.ref) }}"
 
     - name: Test print label
       run: echo "Label is ${{ steps.metadata.outputs.labels }}"
