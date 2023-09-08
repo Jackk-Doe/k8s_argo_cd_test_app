@@ -1,0 +1,20 @@
+name: This is a test workflow when release is created
+
+on:
+  release:
+    types: 
+      - created
+
+jobs:
+  my-test-job:
+    name: My test job
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Test print something
+      run: echo "This is a test workflow when release is created"
+
+    - name: Test print tag
+      run: echo "Tag is ${{ github.ref_name }}"
