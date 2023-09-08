@@ -1,6 +1,12 @@
 name: This is a test workflow when release is created
 
 on:
+  workflow_dispatch:
+    # inputs:
+    #   release:
+    #     description: 'Release version'
+    #     required: true
+    #     default: '1.0.0'
   release:
 
 jobs:
