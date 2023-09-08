@@ -27,8 +27,6 @@ jobs:
       run: echo "Tag is ${{ github.ref_name }}"
 
   build-and-push-docker-image-latest:
-    # Only run this job if the workflow_run job (go-ci) is successful
-    if : github.event.my_test_job.conclusion == 'success'
 
     name: Build and push Docker image
     runs-on: ubuntu-latest
