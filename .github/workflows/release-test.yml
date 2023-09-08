@@ -2,7 +2,7 @@ name: This is a test workflow when release is created
 
 on:
   release:
-    types: [ "prereleased" ]
+    types: [ created, edited, published, unpublished, deleted, prereleased, released ]
 
 jobs:
   my-test-job:
