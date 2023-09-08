@@ -11,7 +11,7 @@ on:
     types: [published]
 
 jobs:
-  my-test-job:
+  my_test_job:
     name: My test job
     runs-on: ubuntu-latest
     steps:
@@ -28,7 +28,7 @@ jobs:
 
   build-and-push-docker-image-latest:
     # Only run this job if the workflow_run job (go-ci) is successful
-    if : github.event.my-test-job.conclusion == 'success'
+    if : github.event.my_test_job.conclusion == 'success'
 
     name: Build and push Docker image
     runs-on: ubuntu-latest
